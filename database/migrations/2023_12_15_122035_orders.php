@@ -16,6 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_cart');
             $table->string('total');
+            $table->string('status')->default('Process', 'Success', 'Canceled');
             $table->timestamps();
             $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
             $table->foreign('id_cart')->references('id')->on('carts')->onDelete('cascade');
