@@ -44,3 +44,11 @@ Route::get('/service', function () {
 Route::get('/testimonial', function () {
     return view('UserView.testimonial');
 });
+
+Route::get('/login', function () {
+    return view('UserView.login');
+});
+
+Route::get('/register', function () {
+    return view('UserView.register');
+});
