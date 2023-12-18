@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\MailSend;
 use Session;
@@ -23,12 +25,12 @@ class RegisterController extends Controller
     {
         $str = Str::random(100);
         $user = User::create([
-            'email' => $request->email,
-            'username' => $request->username,
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'address' => $request->address,
-            'password' => Hash::make($request->password),
+            'email' => $request->input('email'), // Make sure you are retrieving the email from the request
+            'username' => $request->input('username'),
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
+            'password' => Hash::make($request->input('password')),
             'verify_key' => $str,
         ]);
         
@@ -36,10 +38,11 @@ class RegisterController extends Controller
             'username' => $request->username,
             'website' => 'Flavorscape Restaurant',
             'datetime' => date('Y-m-d H:i:s'),
-            'url' => request()->getHttpHost() . '/register/verify' . $str
+            'url' => request()->getHttpHost() . '/register/verify/' . $str
         ];
 
         Mail::to($request->email)->send(new MailSend($details));
+
         Session::flash('message', 'Link verifikasi telah dikirim ke email anda. Silahkan cek email anda untuk mengaktifkan akun.');
         return redirect('register');
     }
@@ -52,16 +55,17 @@ class RegisterController extends Controller
         $keyCheck = User::select('verify_key')
             ->where('verify_key', $verify_key)
             ->exists();
-            
-        if($keyCheck){
+
+        if ($keyCheck) {
             $user = User::where('verify_key', $verify_key)
                 ->update([
-                        'active' => 1,
-                        'email_verified_at' => date('Y-m-d H:i:s'),
+                    'active' => 1,
+                    'email_verified_at' => date('Y-m-d H:i:s'),
                 ]);
-                
-        }else{
-            return "Keys tidak valid";
+
+            return "Verifikasi berhasil. Akun anda sudah aktif.";
+        } else {
+            return "Keys tidak valid.";
         }
     }
 

@@ -24,6 +24,7 @@ date_default_timezone_set('Asia/Jakarta');
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
@@ -70,21 +71,21 @@ date_default_timezone_set('Asia/Jakarta');
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
                         <a href="{{ url('/about') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ url('/service') }}" class="nav-item nav-link">Service</a>
                         <a href="{{ url('/menu') }}" class="nav-item nav-link">Menu</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="{{ url('/reservation') }}" class="dropdown-item">Booking</a>
-                                <a href="{{ url('/ourteam') }}" class="dropdown-item">Our Team</a>
-                                <a href="{{ url('/testimonial') }}" class="dropdown-item">Testimonial</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ url('/reservation') }}" class="nav-item nav-link">Reservation</a>
+                        <a href="{{ url('/testimonial') }}" class="nav-item nav-link">Testimonial</a>
+                        <a href="contact.html" class="nav-item nav-link" style="font-size: 18px;"><i
+                                class="bi bi-cart-fill"></i></a>
                     </div>
-                    <a href="{{ url('/login') }}" class="btn btn-primary py-2 px-4"
+                    @guest
+                    <a href=" {{ url('/login') }}" class="btn btn-primary py-2 px-4"
                         style="font-weight: bold; border-radius:8px">Sign
                         In</a>
+                    @endguest
+                    @auth
+                    <a href=" {{ url('/cart') }}" class="btn btn-primary py-2 px-4"
+                        style="font-weight: bold; border-radius:8px"><i class="bi bi-cart-fill"></i> Cart</a>
+                    @endauth
                 </div>
             </nav>
 

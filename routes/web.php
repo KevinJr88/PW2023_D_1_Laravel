@@ -52,3 +52,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('UserView.register');
 });
+
+Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
+Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
+Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');

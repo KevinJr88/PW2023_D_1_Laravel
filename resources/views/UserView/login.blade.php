@@ -18,20 +18,20 @@
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form class="form" action="{{ url('/') }}">
+                            <form class="form" action="{{route('actionLogin')}}" method="POST">
                                 @csrf
                                 <div>
                                     <h1 class="mb-3 text-center text-light">LOGIN</h1>
                                 </div>
 
                                 <div class="form-floating mb-2 py-2">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Username"
-                                        required />
+                                    <input type="text" name="username" class="form-control" id="floatingInput"
+                                        placeholder="Username" required />
                                     <label for="floatingInput">Username</label>
                                 </div>
 
                                 <div class="form-floating mb-2 py-2">
-                                    <input type="password" class="form-control" id="floatingPassword"
+                                    <input type="password" name="password" class="form-control" id="floatingPassword"
                                         placeholder="Password" required />
                                     <label for="floatingPassword">Password</label>
                                 </div>
@@ -42,7 +42,6 @@
                                 </button>
                                 <a href="{{ url('register') }}" style="width: 100%;"
                                     class="btn btn-primary btn-block mb-1 mt-3">Register</a>
-
                             </form>
                         </div>
                     </div>
