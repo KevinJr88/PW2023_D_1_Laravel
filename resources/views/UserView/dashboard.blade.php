@@ -74,7 +74,7 @@ date_default_timezone_set('Asia/Jakarta');
                         <a href="{{ url('/menu') }}" class="nav-item nav-link">Menu</a>
                         <a href="{{ url('/reservation') }}" class="nav-item nav-link">Reservation</a>
                         <a href="{{ url('/testimonial') }}" class="nav-item nav-link">Testimonial</a>
-                        <a href="contact.html" class="nav-item nav-link" style="font-size: 18px;"><i
+                        <a href="{{ url('/cart') }}" class="nav-item nav-link" style="font-size: 18px;"><i
                                 class="bi bi-cart-fill"></i></a>
                     </div>
                     @guest

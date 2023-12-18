@@ -40,6 +40,12 @@ Route::get('/reservation', function () {
 
 Route::get('/service', function () {
     return view('UserView.service');
+
+    
+});
+
+Route::get('/cart', function () {
+    return view('UserView.cart');
 });
 Route::get('/testimonial', function () {
     return view('UserView.testimonial');
