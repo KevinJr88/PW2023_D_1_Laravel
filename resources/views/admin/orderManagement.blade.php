@@ -64,6 +64,37 @@
                                         </button>
                                     </div>
                                 </td>
+                                <div class="modal fade" id="editStatus{{ $item['id'] }}" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <form action="{{ route('order.edit', $item['id']) }}">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="confirmationModalLabel">Edit Status</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+
+
+                                                    <div class="p-2">
+                                                        <select id="inputKategori" class="form-select" name="status" required>
+
+                                                            <option value="Canceled" @selected($item['status']=='Canceled' )>Canceled</option>
+                                                            <option value="Process" @selected($item['status']=='Process' )>Process</option>
+                                                            <option value="Success" @selected($item['status']=='Success' )>Success</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                                    <button type="submit" class="btn btn-success" id="confirmReservation">Save</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+        </div>
                             </tr>
                             @empty
 
@@ -79,37 +110,7 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="editStatus{{ $item['id'] }}" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <form action="{{ route('order.edit', $item['id']) }}">
-                        @csrf
-                        @method('PUT')
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="confirmationModalLabel">Edit Status</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-
-
-                            <div class="p-2">
-                                <select id="inputKategori" class="form-select" name="status" required>
-
-                                    <option value="Canceled" @selected($item['status']=='Canceled' )>Canceled</option>
-                                    <option value="Process" @selected($item['status']=='Process' )>Process</option>
-                                    <option value="Success" @selected($item['status']=='Success' )>Success</option>
-                                </select>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-success" id="confirmReservation">Save</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        
     </main>
 </div>
 @endsection

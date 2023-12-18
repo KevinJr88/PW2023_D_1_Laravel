@@ -17,7 +17,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+        <a class="navbar-brand ps-3" href="{{ url('/admin')}}">Admin Management</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -54,14 +54,14 @@
 
                         <a class="nav-link" href="{{ url('/admin/customer')}}">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Charts
+                            Customer
                         </a>
                         <a class="nav-link" href="{{ url('/admin/menu')}}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-bowl-food"></i></div>
                             Menu
                         </a>
                         <a class="nav-link" href="{{ url('/admin/order')}}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                             Order
                         </a>
                     </div>
@@ -75,12 +75,13 @@
         @yield('contenx')
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/js/scripts.js') }} {{ asset('assets/js/scripts.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="{{asset('assets/assets/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('assets/assets/demo/chart-bar-demo.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.3.0/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
     <script src="{{asset('assets/js/datatables-simple-demo.js')}}"></script>
+
 </body>
 
 </html>

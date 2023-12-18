@@ -22,5 +22,20 @@ window.addEventListener('DOMContentLoaded', event => {
             localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
         });
     }
+    function isCurrentPage(url) {
+        return window.location.pathname === url;
+    }
+
+    var currentPage = window.location.href;
+
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+
+        
+        var linkUrl = link.getAttribute('href');
+
+        if (currentPage === linkUrl) {
+            link.classList.add('active');
+        }
+    });
 
 });
