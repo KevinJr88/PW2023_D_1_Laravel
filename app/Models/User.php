@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-
+    protected $guard = 'web';
     protected $table = 'users';
     protected $primaryKey = 'id_user';
     protected $fillable = [
@@ -50,4 +50,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    
 }
