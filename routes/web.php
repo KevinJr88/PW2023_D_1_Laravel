@@ -65,7 +65,7 @@ Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterCon
 Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
     return view('admin/mainManagement');
-});
+
 Route::get('/admin', function () {
     return view('admin/mainManagement');
 });
