@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function index()
     {
         if(Auth::check()){
-            return redirect('UserView.home');
+            return redirect('home');
         }else{
             return view('UserView.login');
         }
@@ -41,13 +41,15 @@ class LoginController extends Controller
             
             
         if ($user->active) {
-
-            return response()->redirect('home',[
-                    'message' => 'Authenticated',
-                    'user' => $user,
-                    'token_type' => 'Bearer',
-                    'access_token' => $token
-                ]);
+            $response = [
+                'message' => 'Authenticated',
+                'user' => $user,
+                'token_type' => 'Bearer',
+            ];
+            if ($request->wantsJson()) {
+                return response()->json($response, 201);
+            }
+            return redirect()->route('login.index');
         } else {
             Auth::logout();
             return response()->redirect('login',[
@@ -60,10 +62,7 @@ class LoginController extends Controller
     public function actionLogout()
     {
         Auth::logout();
-
-        return response([
-            'message' => 'Logout',
-        ]);
+        
         return redirect('/');
     }
 }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuAdminController;
 use App\Http\Controllers\OrderAdminController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,9 @@ use App\Http\Controllers\CustomerController;
 Route::get('/', function () {
     return view('UserView.home');
 });
+Route::get('/home', function () {
+    return view('UserView.home');
+});
 
 Route::get('/about', function () {
     return view('UserView.about');
@@ -28,9 +32,9 @@ Route::get('/contact', function () {
     return view('UserView.contact');
 });
 
-Route::get('/menu', function () {
-    return view('UserView.menu');
-});
+// Route::get('/menu', function () {
+//     return view('UserView.menu');
+// });
 
 Route::get('/ourteam', function () {
     return view('UserView.ourteam');
@@ -64,17 +68,21 @@ Route::get('/register', function () {
 Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
 Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
-    return view('admin/mainManagement');
+Route::Resource('/login', App\Http\Controllers\Api\LoginController::class);
+Route::get('logout', [App\Http\Controllers\Api\LoginController::class, 'actionLogout'])->name('actionLogout')->middleware('auth');
 
-Route::get('/admin', function () {
-    return view('admin/mainManagement');
-});
 // Route::get('/admin/menu', function () {
 //     return view('admin/menuAdmin');
 // });
-Route::Resource('/admin/menu', MenuAdminController::class);
-Route::Resource('/admin/order', OrderAdminController::class);
-Route::Resource('admin/customer', CustomerController::class);
+Route::Resource('/menu', MenuController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::resource('/admin/menu', MenuAdminController::class);
+    Route::resource('/admin/order', OrderAdminController::class);
+    Route::resource('/admin/customer', CustomerController::class);
+    Route::get('/admin', function () {
+        return view('admin/mainManagement');
+    });
+});
 // Route::get('/admin/menu', function () {
 //     return view('admin/menuAdmin', [
 //         'menu' => [
