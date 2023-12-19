@@ -19,6 +19,7 @@
                                 <th>Order ID</th>
                                 <th>Customer Name</th>
                                 <th>Order Date</th>
+                                <th>Order Detail</th>
                                 <th>Order Total</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -41,7 +42,20 @@
                                 <!-- <td>{{ $item->user->id_user }}</td> -->
                                 <td>{{ $item->user->name }}</td>
                                 <td>{{ $item['created_at'] }}</td>
-                                <td>{{ $item['total'] }}</td>
+                                <td>
+                                    @php
+                                    $details = $item->cart->detailCart;
+                                    $totalPrice = 0;
+                                    @endphp
+                                    @foreach( $details as $detail)
+                                    <p>{{$detail->menu->name}} - {{$detail->quantity}}</p>
+                                        @php
+                                        
+                                        $totalPrice += $detail->menu->price * $detail->quantity;
+                                        @endphp
+                                    @endforeach
+                                </td>
+                                <td>{{$totalPrice}}</td>
                                 <td>
                                     <!-- {{ $item['status'] }} -->
                                     <h6>
@@ -94,7 +108,7 @@
                                             </form>
                                         </div>
                                     </div>
-        </div>
+                                </div>
                             </tr>
                             @empty
 
@@ -110,7 +124,7 @@
                 </div>
             </div>
         </div>
-        
+
     </main>
 </div>
 @endsection

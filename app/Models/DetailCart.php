@@ -5,23 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class DetailCart extends Model
 {
     use HasFactory;
-    protected $table = 'orders';
+    protected $table = 'detail_carts';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'id_user',
+        'id_menu',
         'id_cart',
         'total',
         'status'
     ];
-    public function user()
+    public function menu()
     {
-        return $this->belongsTo(User::class, 'id_user', 'id_user');
+        return $this->belongsTo(Menu::class, 'id_menu', 'id');
     }
     public function cart()
     {
         return $this->belongsTo(Cart::class, 'id_cart', 'id');
     }
-}   
+}

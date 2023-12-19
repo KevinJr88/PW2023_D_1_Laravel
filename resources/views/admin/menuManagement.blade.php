@@ -150,7 +150,7 @@
                             @empty
 
                             <div class="alert alert-danger">
-                                Data Movies belum tersedia
+                                Data Menu belum tersedia
                             </div>
                             @endforelse
 
