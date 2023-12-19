@@ -8,13 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class DetailCart extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'detail_carts';
     protected $primaryKey = 'id';
     protected $fillable = [
         'id_menu',
         'id_cart',
-        'total',
-        'status'
+        'quantity',
+        
     ];
     public function menu()
     {

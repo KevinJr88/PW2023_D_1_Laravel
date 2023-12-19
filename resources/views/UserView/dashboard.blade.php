@@ -18,7 +18,9 @@ date_default_timezone_set('Asia/Jakarta');
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -37,16 +39,17 @@ date_default_timezone_set('Asia/Jakarta');
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <style>
-        .text-white {
-            color: white;
-        }
+    .text-white {
+        color: white;
+    }
     </style>
 </head>
 
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -71,21 +74,34 @@ date_default_timezone_set('Asia/Jakarta');
                         <a href="{{ url('/menu') }}" class="nav-item nav-link">Menu</a>
                         <a href="{{ url('/reservation') }}" class="nav-item nav-link">Reservation</a>
                         <a href="{{ url('/testimonial') }}" class="nav-item nav-link">Testimonial</a>
-                        @auth
-                        <a href="{{ route('actionLogout') }}" class="nav-item nav-link">Logout</a>
-                        @endauth
-                        <a href="{{ url('/cart') }}" class="nav-item nav-link" style="font-size: 18px;"><i class="bi bi-cart-fill"></i></a>
+
                     </div>
                     @guest
-                    <a href=" {{ url('/login') }}" class="btn btn-primary py-2 px-4" style="font-weight: bold; border-radius:8px">Sign
+                    <a href=" {{ url('/login') }}" class="btn btn-primary py-2 px-4"
+                        style="font-weight: bold; border-radius:8px">Sign
                         In</a>
                     @endguest
                     @auth
-                        @if(Auth::user()->username == 'admin')
-                            <a href="{{ url('/admin') }}" class="btn btn-primary py-2 px-4" style="font-weight: bold; border-radius:8px">Admin</a>
-                        @else
-                            <a href=" {{ url('/cart') }}" class="btn btn-primary py-2 px-4" style="font-weight: bold; border-radius:8px"><i class="bi bi-cart-fill"></i> Cart</a>
-                        @endif
+                    @if(Auth::user()->username == 'admin')
+                    <a href="{{ url('/admin') }}" class="btn btn-primary py-2 px-4"
+                        style="font-weight: bold; border-radius:8px">Admin</a>
+                    @else
+                    <a href=" {{ url('/cart') }}" class="btn btn-primary py-2 px-4"
+                        style="font-weight: bold; border-radius:8px"><i class="bi bi-cart-fill"></i> Cart</a>
+                    @endif
+                    @endauth
+                    @auth
+                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                <li><a class="dropdown-item" href="{{ route('actionLogout') }}">Logout</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
                     @endauth
                 </div>
             </nav>
@@ -118,9 +134,11 @@ date_default_timezone_set('Asia/Jakarta');
                             <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                             <div class="d-flex pt-2">
                                 <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-light btn-social" href=""><i
+                                        class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                                <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn btn-outline-light btn-social" href=""><i
+                                        class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6">
@@ -137,8 +155,10 @@ date_default_timezone_set('Asia/Jakarta');
                             </h4>
                             <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                             <div class="position-relative mx-auto" style="max-width: 400px;">
-                                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                                <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                                <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text"
+                                    placeholder="Your email">
+                                <button type="button"
+                                    class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                             </div>
                         </div>
                     </div>
@@ -152,7 +172,8 @@ date_default_timezone_set('Asia/Jakarta');
                                 <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
                                 Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML
                                     Codex</a><br><br>
-                                Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                                Distributed By <a class="border-bottom" href="https://themewagon.com"
+                                    target="_blank">ThemeWagon</a>
                             </div>
                             <div class="col-md-6 text-center text-md-end">
                                 <div class="footer-menu">

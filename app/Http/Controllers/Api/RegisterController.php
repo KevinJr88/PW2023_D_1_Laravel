@@ -64,7 +64,7 @@ class RegisterController extends Controller
                     'email_verified_at' => date('Y-m-d H:i:s'),
                 ]);
 
-            return "Verifikasi berhasil. Akun anda sudah aktif.";
+            return view('verification');
         } else {
             return "Keys tidak valid.";
         }
