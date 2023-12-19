@@ -20,7 +20,8 @@ class CartController extends Controller
         $cart = DetailCart::join('carts', 'carts.id', '=', 'detail_carts.id_cart')
         ->join('menus', 'menus.id', '=', 'detail_carts.id_menu')
         ->where('carts.id_user', auth()->user()->id_user)
-        ->select('menus.name', 'menus.image', 'menus.price', 'detail_carts.quantity')
+        ->where('carts.status', 0)
+        ->select('menus.name', 'menus.image', 'menus.price', 'detail_carts.quantity', 'detail_carts.id')
         ->get();
         
         //dd($cart);
@@ -92,6 +93,8 @@ class CartController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $cart =DetailCart::find($id); 
+        $cart->delete(); 
+        return redirect('cart')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

@@ -1,30 +1,74 @@
 @extends('UserView.dashboard') @section('content')
+<style>
+.hero-header {
+    position: relative;
+}
 
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#bgvid {
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Warna hitam dengan opasitas 0.5 */
+}
+</style>
 <!-- Service Start -->
 
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
+    <!-- Video Container -->
+    <div class="video-container">
+        <video autoplay muted loop id="bgvid">
+            <source src="img/bgvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div>
+    </div>
+
     <div class="container my-5 py-5">
         <div class="row align-items-center g-5">
-            <div class="col-lg-6 text-center text-lg-start">
+            <div class="col-lg-12 text-center ">
+
+                <img src="img/logo-bg-removebg.png" class="display-3 text-white animated slideInLeft"
+                    style="width: 300px; height: 200px; margin-bottom: -10px" alt="">
+                <!-- <h1 class=" display-3 text-white animated slideInLeft">Flavorscape : -->
+                </h1>
+                <h5 class=" display-3 text-white animated slideInLeft" style="font-size:30px">"Your Culinary Journey
+                    Begins Here"
+                </h5>
                 @auth
-                <h1 class="display-5 text-white animated slideInLeft" style="font-size: 30px">Welcome
+                <h1 class="display-5 text-white animated slideInLeft" style="font-size: 20px">Welcome
                     {{auth()->user()->name}}
                 </h1>
                 @endauth
-                <h1 class=" display-3 text-white animated slideInLeft">Enjoy Our<br>Delicious Meal</h1>
-                <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam
-                    dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-                    stet lorem sit clita duo justo magna dolore erat amet</p>
+                <br>
                 <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
                     Table</a>
             </div>
-            <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+            <!-- <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                 <img class="img-fluid" src="img/hero1.png" alt="">
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
-</div>
+
 
 
 <div class="container-xxl py-5">

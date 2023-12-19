@@ -42,6 +42,7 @@ Route::get('/ourteam', function () {
 // Route::get('/reservation', function () {
 //     return view('UserView.reservation');
 // });
+Route::Resource('/reservation', App\Http\Controllers\ReservationController::class);
 
 Route::get('/service', function () {
     return view('UserView.service');
@@ -89,5 +90,6 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index']);
     Route::post('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'store'])->name('cart.store');
+    Route::delete('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'destroy'])->name('cart.destroy');
     //Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->name('cart');
 });

@@ -1,5 +1,19 @@
 @extends('UserView.dashboard') @section('content')
 
+<style>
+button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+.submit-btn {
+    border-radius: 8px;
+}
+</style>
+
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
         <h1 class="display-3 text-white mb-3 animated slideInDown">Cart</h1>
@@ -38,7 +52,13 @@
                             @foreach ($cart as $item)
                             <tr class="table-body-row">
                                 <input type="hidden" id="detailCartId{{$loop->index}}" value="{{ $item->id }}">
-                                <td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
+                                <td>
+                                    <form action="{{ route('cart.destroy', $item->id) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"><i class="far fa-window-close"></i></button>
+                                    </form>
+                                </td>
                                 <td class="product-image"><img src="{{ asset($item->image) }}" alt=""></td>
                                 <td class="product-name">{{$item->name}}</td>
                                 <td style="display: none;" class="product-price" id="productPrice{{$loop->index}}">
@@ -85,12 +105,14 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="cart-buttons">
+                    <div class="cart-buttons d-flex mx-2">
+                        <a href="{{url('menu')}}" class="submit-btn btn btn-success " type=" submit">Add Menu</a>
                         <!-- <a href="#" class="boxed-btn">Update Cart</a> -->
                         <form action="{{route('createOrder')}}" method="POST">
                             @csrf
                             <!-- <a onclick="checkout()" class="boxed-btn black"><Button>Check Out</Button></a> -->
-                            <button onclick="checkout()" type="submit">Check Out</button>
+                            <button onclick="checkout()" class="submit-btn btn btn-primary" type=" submit">Check
+                                Out</button>
                         </form>
 
 
@@ -145,12 +167,7 @@ function checkout() {
         var quantity = document.getElementById('quantityInput' + index).value;
         var detailCartId = document.getElementById('detailCartId' + index).value;
 
-        // Make an AJAX request to update the quantity in the database
-        // Replace 'your_update_route' with the actual route to update the quantity
-        // You may also want to add CSRF token verification
-        // Example:
-        // var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        // Note: This example assumes you have a route named 'updateQuantity' in your Laravel routes file.
+
         $.ajax({
             url: '/updateQuantity',
             type: 'POST',
