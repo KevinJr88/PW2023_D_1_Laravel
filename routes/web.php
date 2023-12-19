@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MenuAdminController;
+
 use App\Http\Controllers\OrderAdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MenuController;
@@ -40,9 +40,9 @@ Route::get('/ourteam', function () {
     return view('UserView.ourteam');
 });
 
-Route::get('/reservation', function () {
-    return view('UserView.reservation');
-});
+// Route::get('/reservation', function () {
+//     return view('UserView.reservation');
+// });
 
 Route::get('/service', function () {
     return view('UserView.service');
@@ -50,9 +50,9 @@ Route::get('/service', function () {
     
 });
 
-Route::get('/cart', function () {
-    return view('UserView.cart');
-});
+// Route::get('/cart', function () {
+//     return view('UserView.cart');
+// });
 Route::get('/testimonial', function () {
     return view('UserView.testimonial');
 });
@@ -74,10 +74,16 @@ Route::get('logout', [App\Http\Controllers\Api\LoginController::class, 'actionLo
 // Route::get('/admin/menu', function () {
 //     return view('admin/menuAdmin');
 // });
+
+Route::post('/createOrder', [App\Http\Controllers\OrderController::class, 'store'])->name('createOrder');
+Route::get('/order', [App\Http\Controllers\OrderController::class, 'index'])->name('orderDetail');
 Route::Resource('/menu', MenuController::class);
+Route::Resource('/cart', App\Http\Controllers\CartsController::class);
+Route::post('/updateQuantity', [App\Http\Controllers\CartsController::class, 'updateQuantity'])->name('updateQuantity');
 Route::middleware(['auth'])->group(function () {
-    Route::resource('/admin/menu', MenuAdminController::class);
+    Route::resource('/admin/menu', App\Http\Controllers\MenuAdminController::class);
     Route::resource('/admin/order', OrderAdminController::class);
+    Route::Resource('/admin/reservation', App\Http\Controllers\ReservationAdminController::class);
     Route::resource('/admin/customer', CustomerController::class);
     Route::get('/admin', function () {
         return view('admin/mainManagement');

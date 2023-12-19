@@ -10,11 +10,11 @@ class DetailCart extends Model
     use HasFactory;
     protected $table = 'detail_carts';
     protected $primaryKey = 'id';
+    public $timestamps = false;
     protected $fillable = [
         'id_menu',
         'id_cart',
-        'total',
-        'status'
+        'quantity',
     ];
     public function menu()
     {

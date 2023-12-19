@@ -65,6 +65,10 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></div>
                             Order
                         </a>
+                        <a class="nav-link" href="{{ url('/admin/reservation')}}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-date"></i></div>
+                            Reservation
+                        </a>
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">

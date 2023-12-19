@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carts', function (Blueprint $table) {
+        Schema::create('reservation', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->integer('status')->default(0);
-            $table->timestamps();
+            $table->string('name');
+            $table->string('phone');
+            $table->string('date');
+            $table->integer('people');
+            $table->string('message');
             $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carts');
+        Schema::dropIfExists('reservation');
     }
 };
