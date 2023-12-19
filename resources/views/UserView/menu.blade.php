@@ -139,7 +139,7 @@ h5 {
                             @foreach ($menu as $item)
                             <div class="col card sizeCard fillData" style="padding:0px">
                                 <div class="img-box">
-                                    <img src="{{ asset('public/menu/' . $item['image']) }}" alt="">
+                                    <img src="{{ asset($item['image']) }}" alt="">
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
@@ -173,7 +173,7 @@ h5 {
                             @if($item->category == 'Burger')
                             <div class="col card sizeCard fillData" style="padding:0px">
                                 <div class="img-box">
-                                    <img src="{{asset('public/menu/' . $item['image']) }}" alt="">
+                                    <img src="{{asset( $item['image']) }}" alt="">
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
@@ -205,7 +205,7 @@ h5 {
                             @if($item->category == 'Pizza')
                             <div class="col card sizeCard fillData" style="padding:0px">
                                 <div class="img-box">
-                                    <img src="{{ asset('public/menu/' . $item['image']) }}" alt="">
+                                    <img src="{{ asset($item['image']) }}" alt="">
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
@@ -237,7 +237,7 @@ h5 {
                             @if($item->category == 'Noodle')
                             <div class="col card sizeCard fillData" style="padding:0px">
                                 <div class="img-box">
-                                    <img src="{{ asset('public/menu/' . $item['image']) }}" alt="">
+                                    <img src="{{ asset($item['image']) }}" alt="">
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
@@ -297,31 +297,6 @@ h5 {
                 </div>
             </div>
         </div>
-        <!-- Modal -->
-        <!-- Modal -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel menuId">Menu Details</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="selected-menu-id" name="selected_menu_id">
-                <h2 id="menu-name"></h2>
-                <p id="menu-desc">Description: </p>
-                <p id="menu-price">Price: $</p>
-                <!-- Tambahkan informasi lain yang diperlukan -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-
-
-
-
-
-
     </section>
 </div>
 

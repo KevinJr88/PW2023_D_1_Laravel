@@ -77,7 +77,7 @@ Route::get('logout', [App\Http\Controllers\Api\LoginController::class, 'actionLo
 Route::post('/createOrder', [App\Http\Controllers\OrderController::class, 'store'])->name('createOrder');
 Route::get('/order', [App\Http\Controllers\OrderController::class, 'index'])->name('orderDetail');
 Route::Resource('/menu', MenuController::class);
-Route::Resource('/cart', App\Http\Controllers\CartsController::class);
+//Route::Resource('/cart', App\Http\Controllers\CartsController::class);
 Route::post('/updateQuantity', [App\Http\Controllers\CartsController::class, 'updateQuantity'])->name('updateQuantity');
 Route::middleware(['auth'])->group(function () {
     Route::resource('/admin/menu', App\Http\Controllers\MenuAdminController::class);
@@ -88,6 +88,6 @@ Route::middleware(['auth'])->group(function () {
         return view('admin/mainManagement');
     });
     Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index']);
-    Route::post('/cart/{id}', [CartController::class, 'store'])->name('cart.store');
+    Route::post('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'store'])->name('cart.store');
     //Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->name('cart');
 });
