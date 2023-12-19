@@ -3,10 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
-
+use App\Http\Controllers\MenuAdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,7 +14,8 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
+Route::post('/admin/menu', [MenuAdminController::class, 'store']);
+Route::delete('/admin/menu/{id}', [MenuAdminController::class, 'destroy']);Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
 
