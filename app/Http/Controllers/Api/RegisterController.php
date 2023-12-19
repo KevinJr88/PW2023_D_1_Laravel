@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\MailSend;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class RegisterController extends Controller
 {
@@ -24,13 +24,14 @@ class RegisterController extends Controller
     public function actionRegister(Request $request)
     {
         $str = Str::random(100);
+        // dd($request->all());
         $user = User::create([
             'email' => $request->input('email'), // Make sure you are retrieving the email from the request
             'username' => $request->input('username'),
             'name' => $request->input('name'),
             'phone' => $request->input('phone'),
             'address' => $request->input('address'),
-            'password' => Hash::make($request->input('password')),
+            'password' => Hash::make($request->password),
             'verify_key' => $str,
         ]);
         

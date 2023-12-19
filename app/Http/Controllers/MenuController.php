@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Storage;
 
-class MenuAdminController extends Controller
+class MenuController extends Controller
 {
     public function index()
     {
 
-        return view('admin/menuManagement', [
+        return view('UserView.Menu', [
             'menu' => Menu::all()
         ]);
     }
     public function store(Request $request)
     {
-        dd($request->all());
+
         $this->validate($request, [
             'name' => 'required',
             'price' => 'required',
@@ -31,23 +31,22 @@ class MenuAdminController extends Controller
         $menuData['image'] = $image;
         Menu::create($menuData);
         $response = [
-                'success' => true,
-                'message' => 'Data Berhasil Disimpan!',
-                'data' => $menuData
-            ];
+            'success' => true,
+            'message' => 'Data Berhasil Disimpan!',
+            'data' => $menuData
+        ];
 
         if ($request->wantsJson()) {
             return response()->json($response, 201);
         }
-        return 
-        redirect()->route('menu.index')->with([
-            'success' => 'Data Berhasil Disimpan!',
-            'data' => $menuData
-        ]);
+        return
+            redirect()->route('menu.index')->with([
+                'success' => 'Data Berhasil Disimpan!',
+                'data' => $menuData
+            ]);
     }
-    public function update(Request $request, $id)
+    public function edit(Request $request, $id)
     {
-        // dd($request->all());
         try {
             $this->validate($request, [
                 'name' => 'required',
@@ -71,7 +70,8 @@ class MenuAdminController extends Controller
             $menu->save();
             return redirect()->route('menu.index')->with([
                 'success' => 'Data Berhasil Diubah!',
-                'data' => $menu]);
+                'data' => $menu
+            ]);
         } catch (\Throwable $th) {
             //throw $th;
         }
@@ -93,6 +93,6 @@ class MenuAdminController extends Controller
             return response()->json($response, 201);
         }
         return
-        redirect()->route('menu.index');
+            redirect()->route('menu.index');
     }
 }
