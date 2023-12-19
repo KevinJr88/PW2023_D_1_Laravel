@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\OrderAdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\Api\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,9 +34,6 @@ Route::get('/contact', function () {
     return view('UserView.contact');
 });
 
-// Route::get('/menu', function () {
-//     return view('UserView.menu');
-// });
 
 Route::get('/ourteam', function () {
     return view('UserView.ourteam');
@@ -50,9 +49,9 @@ Route::get('/service', function () {
     
 });
 
-// Route::get('/cart', function () {
-//     return view('UserView.cart');
-// });
+Route::get('/cart', function () {
+    return view('UserView.cart');
+});
 Route::get('/testimonial', function () {
     return view('UserView.testimonial');
 });
@@ -88,42 +87,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', function () {
         return view('admin/mainManagement');
     });
+    Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index']);
+    Route::post('/cart/{id}', [CartController::class, 'store'])->name('cart.store');
+    //Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->name('cart');
 });
-// Route::get('/admin/menu', function () {
-//     return view('admin/menuAdmin', [
-//         'menu' => [
-//             [
-//                 'id' => '1',
-//                 'name' => 'Delicious Pizza',
-//                 'category' => 'Pizza',
-//                 'price' => '20',
-//                 'stock' => '10',
-//                 'deskripsi' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum sequi cum consequuntur quam hic corrupti ab quasi modi beatae. Culpa magni quia optio corporis rem praesentium perferendis nam veniam delectus!'
-//             ],
-//             [
-//                 'id' => '2',
-//                 'name' => 'Delicious Burger',
-//                 'category' => 'Burger',
-//                 'price' => '15',
-//                 'stock' => '0',
-//                 'deskripsi' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. '
-//             ],
-//             [
-//                 'id' => '3',
-//                 'name' => 'Delicious Noodle',
-//                 'category' => 'Noodle',
-//                 'price' => '10',
-//                 'stock' => '25',
-//                 'deskripsi' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum sequi cum consequuntur quam hic corrupti ab quasi modi beatae. Culpa magni quia optio corporis rem praesentium perferendis nam veniam delectus!'
-//             ],
-//             [
-//                 'id' => '4',
-//                 'name' => 'Delicious Steak',
-//                 'category' => 'Noodle',
-//                 'price' => '30',
-//                 'stock' => '0',
-//                 'deskripsi' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. '
-//             ],
-//         ]
-//     ]);
-// });
