@@ -45,8 +45,8 @@
                                     <label for="floatingInputEmail">Email</label>
                                 </div>
                                 <div class="form-floating mb-2 py-1">
-                                    <input type="number" name="phone" class=" form-control" id="floatingInputPhone"
-                                        placeholder="Telepon" required />
+                                    <input type="number" name="phone" class="form-control" id="floatingInputPhone"
+                                        placeholder="Telepon" required style="width: 100%;" />
                                     <label for="floatingInputPhone">Phone Number</label>
                                 </div>
                                 <div class="form-floating mb-2 py-1">
@@ -55,9 +55,8 @@
                                     <label for="floatingInputAdress">Address</label>
                                 </div>
 
-
                                 <div class="form-floating mb-2 py-1">
-                                    <input type="password" class="form-control" id="floatingPassword"
+                                    <input type="password" name="password" class="form-control" id="floatingPassword"
                                         placeholder="Password" required />
                                     <label for="floatingPassword">Password</label>
                                 </div>
