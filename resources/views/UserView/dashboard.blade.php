@@ -60,7 +60,7 @@ date_default_timezone_set('Asia/Jakarta');
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="/" class="navbar-brand p-0 logo">
+                <a href="/home" class="navbar-brand p-0 logo">
                     <h1 class="text-white m-0">Flavorscape.
                     </h1>
                 </a>
@@ -69,7 +69,7 @@ date_default_timezone_set('Asia/Jakarta');
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0 pe-4">
-                        <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ url('/home') }}" class="nav-item nav-link active">Home</a>
                         <a href="{{ url('/about') }}" class="nav-item nav-link">About</a>
                         <a href="{{ url('/menu') }}" class="nav-item nav-link">Menu</a>
                         <a href="{{ url('/reservation') }}" class="nav-item nav-link">Reservation</a>
@@ -212,6 +212,19 @@ date_default_timezone_set('Asia/Jakarta');
 
         <!-- Template Javascript -->
         <script src="{{ asset('js/main.js') }}"></script>
+        <script>
+            var currentPage = window.location.href;
+
+            document.querySelectorAll('.nav-link').forEach(function (link) {
+
+                
+                var linkUrl = link.getAttribute('href');
+
+                if (currentPage === linkUrl) {
+                    link.classList.add('active');
+                }
+            });
+        </script>
 </body>
 
 </html>
