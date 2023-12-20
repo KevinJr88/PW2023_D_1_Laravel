@@ -55,7 +55,7 @@
                                         @endphp
                                     @endforeach
                                 </td>
-                                <td>{{$totalPrice}}</td>
+                                <td>{{$totalPrice * 1.1}}</td>
                                 <td>
                                     <!-- {{ $item['status'] }} -->
                                     <h6>
