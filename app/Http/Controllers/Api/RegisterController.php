@@ -19,7 +19,7 @@ class RegisterController extends Controller
 
     public function register()
     {
-        return view('register');
+        return view('UserView.register');
     }
 
 
@@ -47,7 +47,7 @@ class RegisterController extends Controller
             'url' => request()->getHttpHost() . '/register/verify/' . $str
         ];
 
-        Mail::to($request->email)->send(new MailSend($details));
+        // Mail::to($request->email)->send(new MailSend($details));
 
         Session::flash('message', 'Link verifikasi telah dikirim ke email anda. Silahkan cek email anda untuk mengaktifkan akun.');
         return redirect('register');

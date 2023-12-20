@@ -18,11 +18,18 @@
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form class="form" action="{{route('actionLogin')}}" method="POST">
-                                @csrf
                                 <div>
                                     <h1 class="mb-3 text-center text-light">LOGIN</h1>
                                 </div>
+                            <hr>
+                            @if (session('error'))
+                            <div class="alert alert-danger">
+                                <b>Oops!</b> {{ session('error') }}
+                            </div>
+                            @endif
+                            <form class="form" action="{{route('actionLogin')}}" method="POST">
+                                @csrf
+                                
 
                                 <div class="form-floating mb-2 py-2">
                                     <input type="text" name="username" class="form-control" id="floatingInput"

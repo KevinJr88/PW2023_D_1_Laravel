@@ -46,7 +46,6 @@ Route::post('/reservation', [App\Http\Controllers\ReservationController::class, 
 
 Route::get('/service', function () {
     return view('UserView.service');
-
     
 });
 
@@ -64,6 +63,8 @@ Route::get('/register', function () {
 
 Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
 // Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
+Route::get('register', [App\Http\Controllers\Api\RegisterController::class,'register'])->name('register');
+Route::post('register/action', [App\Http\Controllers\Api\RegisterController::class, 'actionRegister'])->name('actionRegister');
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
 Route::Resource('/login', App\Http\Controllers\Api\LoginController::class);
 Route::get('logout', [App\Http\Controllers\Api\LoginController::class, 'actionLogout'])->name('actionLogout')->middleware('auth');
