@@ -36,8 +36,9 @@
             </div>
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                <p>Exceptional service and a delectable menu make Flavorscape a standout dining destination. From
-                    the first bite to the last, every dish is a masterpiece. Highly recommended!</p>
+                <p>Exceptional service and a delectable menu make Flavorscape a standout dining destination.
+                    From
+                    the first bite to the last, every dish is a masterpiece.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/yoga.png"
                         style="width: 50px; height: 50px;">
@@ -49,21 +50,22 @@
             </div>
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                <p>An absolute gem! Flavorscape captivates with its delightful ambiance and a menu that promises a
+                <p>An absolute gem! Flavorscape captivates with its delightful ambiance and a menu that promises
+                    a
                     gastronomic adventure. Each dish is a celebration of taste and creativity.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
                         style="width: 50px; height: 50px;">
                     <div class="ps-3">
-                        <h5 class="mb-1">Elizabeth Hanna/h5>
-                            <small>CEO of Digimaya Group</small>
+                        <h5 class="mb-1">Elizabeth Hanna</h5>
+                        <small>CEO of Digimaya Group</small>
                     </div>
                 </div>
             </div>
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                 <p>Outstanding culinary journey! Flavorscape exceeded all expectations with its diverse menu and
-                    impeccable presentation. Every visit is a delightful exploration of flavors. Good Jobb Flavorscape!!
+                    impeccable presentation. Every visit is a delightful exploration of flavors.
                 </p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg"
