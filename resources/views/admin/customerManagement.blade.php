@@ -82,7 +82,7 @@
                                         <div class="modal fade" id="editCustomer{{ $item['id_user'] }}" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered">
                                                 <div class="modal-content">
-                                                    <form action="{{ route('customer.edit', $item['id_user']) }}">
+                                                    <form action="{{ route('customer.update', $item['id_user']) }}" method="POST">
                                                         @csrf
                                                         @method('PUT')
                                                         <div class="modal-header">
