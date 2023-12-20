@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -24,38 +24,25 @@ class LoginController extends Controller
 
     public function actionLogin(Request $request)
     {   
-        $credentials = [
+        $data = [
             'username' => $request->input('username'),
             'password' => $request->input('password'),
         ];
+        if(Auth::attempt($data)){
+            $user = Auth::user();
 
-        //dd($credentials);
-
-        if (!Auth::attempt($credentials)) {
-
-            return response(['message' => 'Invalid Credential'], 401);
-            
-        } 
-        
-        $user = Auth::user();
-            
-            
-        if ($user->active) {
-            $response = [
-                'message' => 'Authenticated',
-                'user' => $user,
-                'token_type' => 'Bearer',
-            ];
-            if ($request->wantsJson()) {
-                return response()->json($response, 201);
+            if($user->active){
+                return redirect('home');
+            }else{
+                Auth::logout();
+                Session::flash('error', 'Akun anda belum diverifikasi. Silahkan cek email anda');
+                return redirect()->route('login.index');
             }
+        }else{
+            Session::flash('error', 'Username atau Password salah');
             return redirect()->route('login.index');
-        } else {
-            Auth::logout();
-            return response()->redirect('login',[
-                'message' => 'User is not Active',
-            ]);
         }
+    
     }
     
 

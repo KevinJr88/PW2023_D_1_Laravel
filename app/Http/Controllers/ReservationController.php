@@ -32,11 +32,7 @@ class ReservationController extends Controller
             if ($request->wantsJson()) {
                 return response()->json($response, 201);
             }
-            return
-            redirect()->route('reservation.index')->with([
-                'success' => 'Data Berhasil Disimpan!',
-                'data' => $reservationData
-            ]);
+            return redirect('/reservation');
         
     }
 }
