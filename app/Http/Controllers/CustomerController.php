@@ -24,22 +24,11 @@ class CustomerController extends Controller
             'member' => User::all()
         ]);
     }
-    public function edit(Request $request, $id)
+    public function update(Request $request, $id)
     {
         try {
-            $this->validate($request, [
-                'name' => 'required',
-                'email' => 'required',
-                'address' => 'required',
-                'phone' => 'required',
-                'active' => 'required'
-            ]);
             $member = User::find($id);
-            $member->name = $request->name;
-            $member->email = $request->email;
-            $member->address = $request->address;
-            $member->phone = $request->phone;
-            $member->active = $request->active;
+            $member->update($request->all());
             $member->save();
             $response = [
                 'success' => true,
@@ -54,19 +43,18 @@ class CustomerController extends Controller
             return redirect()->route('customer.index');
         }
     }
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        try {
-            $member = User::find($id);
-            $member->delete();
-            $response = [
-                'success' => true,
-                'message' => 'Data Berhasil Dihapus!',
-                'data' => $member
-            ];
-            return redirect()->route('customer.index');
-        } catch (\Throwable $th) {
-            return redirect()->route('customer.index');
+        $member = User::find($id);
+        $member->delete();
+        $response = [
+            'success' => true,
+            'message' => 'Data Berhasil Dihapus!',
+            'data' => $member
+        ];
+        if ($request->wantsJson()) {
+            return response()->json($response, 200);
         }
+        return redirect()->route('customer.index');
     }
 }

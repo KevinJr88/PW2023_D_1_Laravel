@@ -81,7 +81,7 @@
                                 <div class="modal fade" id="editStatus{{ $item['id'] }}" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
-                                            <form action="{{ route('order.edit', $item['id']) }}">
+                                            <form action="{{ route('order.update', $item['id']) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <div class="modal-header">

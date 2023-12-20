@@ -21,10 +21,8 @@ class OrderAdminController extends Controller
             'order' => $order
         ]);
     }
-    public function edit(Request $request, $id)
+    public function update(Request $request, $id)
     {
-        try {
-            
             $order = Order::find($id);
             $order->status = $request->status;
             $order->save();
@@ -40,12 +38,7 @@ class OrderAdminController extends Controller
                 'success' => 'Data Berhasil Diubah!',
                 'data' => $order
             ]);
-        } catch (\Throwable $th) {
-            return redirect()->route('order.index')->with([
-                'error' => 'Data Gagal Diubah!',
-                'data' => $order
-            ]);
-        }
+
 
     }
 }
