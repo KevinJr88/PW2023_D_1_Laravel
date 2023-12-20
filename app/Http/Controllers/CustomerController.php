@@ -6,8 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\User;
 class CustomerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        $customer = User::all();
+        if ($request->wantsJson()) {
+            $response = [
+                'success' => true,
+                'message' => 'Data Berhasil Diambil!',
+                'data' => $customer
+            ];
+            return response()->json($response, 200);
+        }
+        return view('admin/customerManagement', [
+            'member' => $customer
+        ]);
         return view('admin/customerManagement', [
             'member' => User::all()
         ]);

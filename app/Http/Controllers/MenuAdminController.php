@@ -8,11 +8,19 @@ use Illuminate\Support\Facades\Storage;
 
 class MenuAdminController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-
+        $menu = Menu::all();
+        if($request->wantsJson()){
+            $response = [
+                'success' => true,
+                'message' => 'Data Berhasil Diambil!',
+                'data' => $menu
+            ];
+            return response()->json($response, 200);
+        }
         return view('admin/menuManagement', [
-            'menu' => Menu::all()
+            'menu' => $menu
         ]);
     }
     public function store(Request $request)
