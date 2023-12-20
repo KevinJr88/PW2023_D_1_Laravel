@@ -32,20 +32,23 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Name" required>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Name"
+                                    required>
                                 <label for="name">Name</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="number" class="form-control" name="phone" id="number" placeholder="Your Phone Number" style="width: 100%;" required>
+                                <input type="number" class="form-control" name="phone" id="number"
+                                    placeholder="Your Phone Number" style="width: 100%;" required>
                                 <label for="number">Phone Number</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating date" id="date3" data-target-input="nearest">
                                 <input type="text" class="form-control datetimepicker-input" name="date" id="datetime"
-                                    placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" required />
+                                    placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker"
+                                    required />
                                 <label for="datetime">Date & Time</label>
                             </div>
                         </div>
@@ -55,6 +58,11 @@
                                     <option value="1">People 1</option>
                                     <option value="2">People 2</option>
                                     <option value="3">People 3</option>
+                                    <option value="4">People 4</option>
+                                    <option value="5">People 5</option>
+                                    <option value="6">People 6</option>
+                                    <option value="7">People 7</option>
+                                    <option value="8">People 8</option>
                                 </select>
                                 <label for="select1">No Of People</label>
                             </div>

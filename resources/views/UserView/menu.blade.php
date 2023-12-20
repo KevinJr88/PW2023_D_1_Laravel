@@ -143,7 +143,10 @@ h5 {
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
-                                    <p>{{ $item->desc}}</p>
+                                    <div style="height:90px;">
+                                        <p>{{ $item->desc}}</p>
+                                    </div>
+
                                     <div class="d-flex justify-content-between w-100 p-2">
                                         <h5>${{$item->price}}</h5>
                                         <form method="POST" action="{{ route('cart.store', ['id' => $item->id]) }}">
@@ -177,7 +180,9 @@ h5 {
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
-                                    <p>{{ $item->desc}}</p>
+                                    <div style="height:90px;">
+                                        <p>{{ $item->desc}}</p>
+                                    </div>
                                     <div class="d-flex justify-content-between w-100 p-2">
                                         <h5>${{$item->price}}</h5>
                                         <form method="POST" action="{{ route('cart.store', ['id' => $item->id]) }}">
@@ -212,7 +217,9 @@ h5 {
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
-                                    <p>{{ $item->desc}}</p>
+                                    <div style="height:90px;">
+                                        <p>{{ $item->desc}}</p>
+                                    </div>
                                     <div class="d-flex justify-content-between w-100 p-2">
                                         <h5>${{$item->price}}</h5>
                                         <form method="POST" action="{{ route('cart.store', ['id' => $item->id]) }}">
@@ -247,7 +254,9 @@ h5 {
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
-                                    <p>{{ $item->desc}}</p>
+                                    <div style="height:90px;">
+                                        <p>{{ $item->desc}}</p>
+                                    </div>
                                     <div class="d-flex justify-content-between w-100 p-2">
                                         <h5>${{$item->price}}</h5>
                                         <form method="POST" action="{{ route('cart.store', ['id' => $item->id]) }}">
@@ -278,11 +287,13 @@ h5 {
                             @if($item->category == 'Steak')
                             <div class="col card sizeCard fillData" style="padding:0px">
                                 <div class="img-box">
-                                    <img src="{{ asset('public/menu/' . $item['image']) }}" alt="">
+                                    <img src="{{ asset($item['image']) }}" alt="">
                                 </div>
                                 <div class="" style="padding:10px;">
                                     <h5>{{ $item->name}}</h5>
-                                    <p>{{ $item->desc}}</p>
+                                    <div style="height:90px;">
+                                        <p>{{ $item->desc}}</p>
+                                    </div>
                                     <div class="d-flex justify-content-between w-100 p-2">
                                         <h5>${{$item->price}}</h5>
                                         <form method="POST" action="{{ route('cart.store', ['id' => $item->id]) }}">

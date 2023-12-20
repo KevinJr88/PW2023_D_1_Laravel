@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderAdminController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,9 @@ use App\Http\Controllers\Api\CartController;
 */
 
 
-Route::get('/', function () {
-    return view('UserView.home');
-});
+
+Route::Resource('/', HomeController::class);
+
 Route::get('/home', function () {
     return view('UserView.home');
 });
@@ -57,9 +58,9 @@ Route::get('/testimonial', function () {
 });
 
 
-Route::get('/register', function () {
-    return view('UserView.register');
-});
+// Route::get('/register', function () {
+//     return view('UserView.register');
+// });
 
 Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
 // Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
@@ -67,6 +68,8 @@ Route::get('register', [App\Http\Controllers\Api\RegisterController::class,'regi
 Route::post('register/action', [App\Http\Controllers\Api\RegisterController::class, 'actionRegister'])->name('actionRegister');
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
 Route::Resource('/login', App\Http\Controllers\Api\LoginController::class);
+// Route::Resource('/register', App\Http\Controllers\Api\RegisterController::class);
+//Route::get('/register', [App\Http\Controllers\Api\RegisterController::class, 'index'])->name('register');;
 Route::get('logout', [App\Http\Controllers\Api\LoginController::class, 'actionLogout'])->name('actionLogout')->middleware('auth');
 
 
