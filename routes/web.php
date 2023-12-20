@@ -76,6 +76,14 @@ Route::Resource('/menu', MenuController::class);
 
 Route::post('/updateQuantity', [App\Http\Controllers\CartsController::class, 'updateQuantity'])->name('updateQuantity');
 Route::middleware(['auth'])->group(function () {
+    
+    Route::Resource('/profile', App\Http\Controllers\ProfileController::class);
+    Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index']);
+    Route::post('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'store'])->name('cart.store');
+    Route::delete('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'destroy'])->name('cart.destroy');
+    //Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->name('cart');
+});
+Route::middleware(['auth', 'admin'])->group(function (){
     Route::resource('/admin/menu', App\Http\Controllers\MenuAdminController::class);
     Route::resource('/admin/order', OrderAdminController::class);
     Route::Resource('/admin/reservation', App\Http\Controllers\ReservationAdminController::class);
@@ -83,9 +91,4 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', function () {
         return view('admin/mainManagement');
     });
-    Route::Resource('/profile', App\Http\Controllers\ProfileController::class);
-    Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index']);
-    Route::post('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'store'])->name('cart.store');
-    Route::delete('/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'destroy'])->name('cart.destroy');
-    //Route::get('/cart', [App\Http\Controllers\Api\CartController::class, 'index'])->name('cart');
 });
