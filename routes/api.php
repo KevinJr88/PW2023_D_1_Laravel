@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
-
 use App\Http\Controllers\MenuAdminController;
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +22,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
 
 //Route::post('/register', [App\Http\Controllers\Api\AuthController::class, 'register']);
-Route::get('register', [App\Http\Controllers\Api\RegisterController::class,'register'])->name('register');
+Route::get('register', [App\Http\Controllers\Api\RegisterController::class,'index'])->name('register');
 Route::post('register/action', [App\Http\Controllers\Api\RegisterController::class, 'actionRegister'])->name('actionRegister');
 Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
 

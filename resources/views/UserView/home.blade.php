@@ -47,10 +47,10 @@
             <div class="col-lg-12 text-center ">
 
                 <img src="img/logo-bg-removebg.png" class="display-3 text-white animated slideInLeft"
-                    style="width: 300px; height: 200px; margin-bottom: -10px" alt="">
+                    style="width: 300px; height: 200px; margin-bottom: -20px" alt="">
                 <!-- <h1 class=" display-3 text-white animated slideInLeft">Flavorscape : -->
                 </h1>
-                <h5 class=" display-3 text-white animated slideInLeft" style="font-size:30px">"Your Culinary Journey
+                <h5 class=" display-3 text-white animated slideInLeft" style="font-size:25px">"Your Culinary Journey
                     Begins Here"
                 </h5>
                 @auth
@@ -59,7 +59,8 @@
                 </h1>
                 @endauth
                 <br>
-                <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
+                <a href="{{url('reservation')}}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book
+                    A
                     Table</a>
             </div>
             <!-- <div class="col-lg-6 text-center text-lg-end overflow-hidden">
@@ -71,49 +72,6 @@
 
 
 
-<div class="container-xxl py-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
-                        <h5>Master Chefs</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
-                        <h5>Quality Food</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
-                        <h5>Online Order</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                <div class="service-item rounded pt-3">
-                    <div class="p-4">
-                        <i class="fa fa-3x fa-headset text-primary mb-4"></i>
-                        <h5>24/7 Service</h5>
-                        <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Service End -->
 
 
 <!-- About Start -->
@@ -139,7 +97,7 @@
             </div>
             <div class="col-lg-6">
                 <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                <h1 class="mb-4">Welcome to <i class="fa fa-utensils text-primary me-2"></i>Restoran</h1>
+                <h1 class="mb-4">Welcome to Flavorscape Restoran</h1>
                 <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
                     diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>
                 <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
@@ -732,34 +690,34 @@
         <div class="owl-carousel testimonial-carousel">
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
-                    diam</p>
+                <p>Sensational dining experience! The flavors at Flavorscape are truly extraordinary, and the
+                    attention to detail in each dish is impeccable. A must-visit for food enthusiasts!</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/alex.png"
                         style="width: 50px; height: 50px;">
                     <div class="ps-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <small>Profession</small>
+                        <h5 class="mb-1">Alexander Olivio</h5>
+                        <small>CTO Transcorp.</small>
                     </div>
                 </div>
             </div>
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
-                    diam</p>
+                <p>Exceptional service and a delectable menu make Flavorscape a standout dining destination. From
+                    the first bite to the last, every dish is a masterpiece. Highly recommended!</p>
                 <div class="d-flex align-items-center">
-                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg"
+                    <img class="img-fluid flex-shrink-0 rounded-circle" src="img/yoga.png"
                         style="width: 50px; height: 50px;">
                     <div class="ps-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <small>Profession</small>
+                        <h5 class="mb-1">Yoga Vinanda Sembiring</h5>
+                        <small>Senior Lawyer</small>
                     </div>
                 </div>
             </div>
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
-                    diam</p>
+                <p>An absolute gem! Flavorscape captivates with its delightful ambiance and a menu that promises a
+                    gastronomic adventure. Each dish is a celebration of taste and creativity.</p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
                         style="width: 50px; height: 50px;">
@@ -771,8 +729,9 @@
             </div>
             <div class="testimonial-item bg-transparent border rounded p-4">
                 <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
-                <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore
-                    diam</p>
+                <p>Outstanding culinary journey! Flavorscape exceeded all expectations with its diverse menu and
+                    impeccable presentation. Every visit is a delightful exploration of flavors. Good Jobb Flavorscape!!
+                </p>
                 <div class="d-flex align-items-center">
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg"
                         style="width: 50px; height: 50px;">
