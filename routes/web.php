@@ -61,14 +61,16 @@ Route::get('/login', function () {
     return view('UserView.login');
 });
 
-Route::get('/register', function () {
-    return view('UserView.register');
-});
+// Route::get('/register', function () {
+//     return view('UserView.register');
+// });
 
 Route::get('register/verify/{verify_key}', [App\Http\Controllers\Api\RegisterController::class, 'verify'])->name('verify');
 Route::get('/login', [App\Http\Controllers\Api\LoginController::class, 'index'])->name('login');
 Route::post('/actionLogin', [App\Http\Controllers\Api\LoginController::class, 'actionLogin'])->name('actionLogin');
 Route::Resource('/login', App\Http\Controllers\Api\LoginController::class);
+Route::Resource('/register', App\Http\Controllers\Api\RegisterController::class);
+Route::get('/register', [App\Http\Controllers\Api\RegisterController::class, 'index'])->name('register');;
 Route::get('logout', [App\Http\Controllers\Api\LoginController::class, 'actionLogout'])->name('actionLogout')->middleware('auth');
 
 // Route::get('/admin/menu', function () {
