@@ -30,7 +30,7 @@
                         style="width: 50px; height: 50px;">
                     <div class="ps-3">
                         <h5 class="mb-1">Alexander Olivio</h5>
-                        <small>CTO Transcorp.</small>
+                        <small>CTO of Transcorp</small>
                     </div>
                 </div>
             </div>
@@ -55,8 +55,8 @@
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg"
                         style="width: 50px; height: 50px;">
                     <div class="ps-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <small>Profession</small>
+                        <h5 class="mb-1">Elizabeth Hanna/h5>
+                            <small>CEO of Digimaya Group</small>
                     </div>
                 </div>
             </div>
@@ -69,8 +69,8 @@
                     <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg"
                         style="width: 50px; height: 50px;">
                     <div class="ps-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <small>Profession</small>
+                        <h5 class="mb-1">Renatta Moeloek</h5>
+                        <small>Celebrity Chef</small>
                     </div>
                 </div>
             </div>
@@ -78,5 +78,4 @@
     </div>
 </div>
 <!-- Testimonial End -->
-
 @endsection

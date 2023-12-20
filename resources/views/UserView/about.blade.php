@@ -37,15 +37,18 @@
             </div>
             <div class="col-lg-6">
                 <h5 class="section-title ff-secondary text-start text-primary fw-normal">About Us</h5>
-                <h1 class="mb-4">Welcome to <i class="fa fa-utensils text-primary me-2"></i>Restoran</h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos
-                    erat ipsum et lorem et sit, sed stet lorem sit.</p>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                    eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <h1 class="mb-4">Welcome to Flavorscape Restoran</h1>
+                <p class="mb-4">A culinary haven where taste knows no boundaries.
+                    Immerse yourself in a dining experience that transcends borders, offering a symphony of flavors from
+                    around the globe.</p>
+                <p class="mb-4">At Flavorscape we go beyond being just a restaurant; we are a gastronomic
+                    journey across continents. Our commitment is to deliver exceptional dishes that fuse locally-sourced
+                    ingredients with unparalleled culinary expertise.</p>
                 <div class="row g-4 mb-4">
                     <div class="col-sm-6">
                         <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">15</h1>
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">3
+                            </h1>
                             <div class="ps-4">
                                 <p class="mb-0">Years of</p>
                                 <h6 class="text-uppercase mb-0">Experience</h6>
@@ -54,7 +57,8 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">50</h1>
+                            <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">5
+                            </h1>
                             <div class="ps-4">
                                 <p class="mb-0">Popular</p>
                                 <h6 class="text-uppercase mb-0">Master Chefs</h6>
@@ -69,8 +73,6 @@
 </div>
 <!-- About End -->
 
-
-<!-- Team Start -->
 <div class="container-xxl pt-5 pb-3">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -83,8 +85,8 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-1.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
+                    <h5 class="mb-0">Arnold Poernomo</h5>
+                    <small>Executive Chef</small>
                     <div class="d-flex justify-content-center mt-3">
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -97,8 +99,8 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-2.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
+                    <h5 class="mb-0">Juna Rorimpandey</h5>
+                    <small>Chef</small>
                     <div class="d-flex justify-content-center mt-3">
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -111,8 +113,8 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-3.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
+                    <h5 class="mb-0">Joseph Jhonwick</h5>
+                    <small>Chef</small>
                     <div class="d-flex justify-content-center mt-3">
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -125,8 +127,8 @@
                     <div class="rounded-circle overflow-hidden m-4">
                         <img class="img-fluid" src="img/team-4.jpg" alt="">
                     </div>
-                    <h5 class="mb-0">Full Name</h5>
-                    <small>Designation</small>
+                    <h5 class="mb-0">Victory Wilson</h5>
+                    <small>Pastry Chef</small>
                     <div class="d-flex justify-content-center mt-3">
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
