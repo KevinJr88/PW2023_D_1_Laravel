@@ -72,7 +72,14 @@ date_default_timezone_set('Asia/Jakarta');
                         <a href="{{ url('/about') }}" class="nav-item nav-link">About</a>
                         <a href="{{ url('/menu') }}" class="nav-item nav-link">Menu</a>
                         <a href="{{ url('/reservation') }}" class="nav-item nav-link">Reservation</a>
+
+                        @guest
                         <a href="{{ url('/testimonial') }}" class="nav-item nav-link">Testimonial</a>
+                        @endguest
+
+                        @auth
+                        <a href="{{ url('/order') }}" class="nav-item nav-link">History</a>
+                        @endauth
                     </div>
                     @guest
                     <a href=" {{ url('/login') }}" class="btn btn-primary py-2 px-4"
@@ -95,7 +102,7 @@ date_default_timezone_set('Asia/Jakarta');
                                 data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ url('/profile') }}">Profile</a></li>
-                                <li><a class="dropdown-item" href="{{ url('/order') }}">History</a></li>
+                                <!-- <li><a class="dropdown-item" href="{{ url('/order') }}">History</a></li> -->
                                 <li><a class="dropdown-item" href="{{ route('actionLogout') }}">Logout</a></li>
 
                             </ul>
@@ -200,17 +207,17 @@ date_default_timezone_set('Asia/Jakarta');
         <!-- Template Javascript -->
         <script src="{{ asset('js/main.js') }}"></script>
         <script>
-            var currentPage = window.location.href;
+        var currentPage = window.location.href;
 
-            document.querySelectorAll('.nav-link').forEach(function (link) {
+        document.querySelectorAll('.nav-link').forEach(function(link) {
 
-                
-                var linkUrl = link.getAttribute('href');
 
-                if (currentPage === linkUrl) {
-                    link.classList.add('active');
-                }
-            });
+            var linkUrl = link.getAttribute('href');
+
+            if (currentPage === linkUrl) {
+                link.classList.add('active');
+            }
+        });
         </script>
 </body>
 

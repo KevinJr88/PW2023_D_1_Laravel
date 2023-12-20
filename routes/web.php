@@ -23,9 +23,11 @@ use App\Http\Controllers\HomeController;
 
 Route::Resource('/', HomeController::class);
 
-Route::get('/home', function () {
-    return view('UserView.home');
-});
+// Route::get('/home', function () {
+//     return view('UserView.home');
+// });
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/about', function () {
     return view('UserView.about');
