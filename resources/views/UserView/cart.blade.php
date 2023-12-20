@@ -66,8 +66,8 @@ button {
                                 <td class="product-quantity">
                                     <input type="number" id="quantityInput{{$loop->index}}" value="{{$item->quantity}}"
                                         placeholder="{{$item->quantity}}"
-                                        onchange="updateSubTotal({{$loop->index}}); updateTotal()"
-                                        onload="updateSubTotal({{$loop->index}}); updateTotal()">
+                                        onchange="updateSubTotal({{ $loop->index }}); updateTotal()"
+                                        >
                                 </td>
                                 <td class=" product-total" id="productTotal{{$loop->index}}"></td>
                             </tr>

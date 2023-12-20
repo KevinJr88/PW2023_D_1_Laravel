@@ -2,7 +2,7 @@
 
 <div class="container-xxl py-5 bg-dark hero-header mb-5">
     <div class="container text-center my-5 pt-5 pb-4">
-        <h1 class="display-3 text-white mb-3 animated slideInDown">ORDER DETAIL</h1>
+        <h1 class="display-3 text-white mb-3 animated slideInDown">LATEST ORDER DETAIL</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center text-uppercase">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -16,6 +16,9 @@
 <!-- cart -->
 <div class="cart-section mt-150 mb-150">
     <div class="container">
+        @if(!$order)
+            <h1 class="text-center">You Havent Ordered Yet</h1>
+        @else
         <div class="row">
             <div class="col-lg-8 col-md-12">
                 <div class="cart-table-wrap">
@@ -86,6 +89,7 @@
             </div>
         </div>
     </div>
+    @endif
 </div>
 
 @endsection

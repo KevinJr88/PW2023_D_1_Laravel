@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
+            $table->string('image')->nullable();
             $table->string('email')->unique();
             $table->string('verify_key');
             $table->integer('active')->nullable();

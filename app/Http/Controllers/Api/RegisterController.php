@@ -10,7 +10,9 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
 use App\Models\User;
 use App\Mail\MailSend;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Session;
+use Spatie\Backtrace\File;
 
 class RegisterController extends Controller
 {
@@ -25,6 +27,8 @@ class RegisterController extends Controller
     {
         $str = Str::random(100);
         // dd($request->all());
+        $default = new UploadedFile(public_path('/images/makanan/doublebun.png'), 'default.png', 'image/png', null, true);
+        $image = $default->store('public/users');
         $user = User::create([
             'email' => $request->input('email'), // Make sure you are retrieving the email from the request
             'username' => $request->input('username'),
@@ -33,6 +37,7 @@ class RegisterController extends Controller
             'address' => $request->input('address'),
             'password' => Hash::make($request->password),
             'verify_key' => $str,
+            'image' => $image,
         ]);
         
         $details = [

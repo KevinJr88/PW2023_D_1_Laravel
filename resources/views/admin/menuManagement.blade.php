@@ -122,7 +122,7 @@
                                                         </div>
                                                         <div class="p-2">
                                                             <div class="input-group">
-                                                                <input type="file" class="form-control" name="image" id="inputGambar" value="{{ $item->image }}">
+                                                                <input type="file" class="form-control" name="image" id="inputGambar" value="{{ $item->image }}" accept="image/*">
                                                                 <label class="input-group-text" for="inputGambar">Food Picture</label>
                                                             </div>
                                                         </div>

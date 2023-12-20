@@ -60,7 +60,7 @@ date_default_timezone_set('Asia/Jakarta');
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0 logo">
+                <a href="/" class="navbar-brand p-0 logo">
                     <h1 class="text-white m-0">Flavorscape.
                     </h1>
                 </a>
@@ -96,7 +96,8 @@ date_default_timezone_set('Asia/Jakarta');
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
+                                <li><a class="dropdown-item" href="{{ url('/profile') }}">Profile</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/order') }}">History</a></li>
                                 <li><a class="dropdown-item" href="{{ route('actionLogout') }}">Logout</a></li>
 
                             </ul>

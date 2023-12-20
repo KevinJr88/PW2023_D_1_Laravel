@@ -52,9 +52,7 @@ class LoginController extends Controller
             return redirect()->route('login.index');
         } else {
             Auth::logout();
-            return response()->redirect('login',[
-                'message' => 'User is not Active',
-            ]);
+            return redirect()->route('login.index');
         }
     }
     
